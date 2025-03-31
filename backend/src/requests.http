@@ -1,0 +1,26 @@
+POST http://localhost:5001/api/products
+Content-Type: application/json
+
+{
+  "name": "Wireless Keyboard",
+  "price": 49.99,
+  "description": "A sleek wireless keyboard with backlit keys.",
+  "stock": 20,
+  "image": "https://example.com/keyboard.jpg",
+  "category": "electronics"
+}
+###
+
+GET http://localhost:5001/api/products
+###
+
+DELETE  http://localhost:5001/api/products/1
+###
+
+PUT  http://localhost:5001/api/products/1
+Content-Type: application/json
+
+{
+  "price": 39.99
+}
+###
