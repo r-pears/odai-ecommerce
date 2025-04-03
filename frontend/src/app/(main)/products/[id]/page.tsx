@@ -1,38 +1,28 @@
-import { dummyProducts } from '../../../../lib/product';
-import { notFound } from 'next/navigation';
+// app/(main)/products/[id]/page.tsx
+import { Suspense } from 'react';
 import ProductDetails from '../../../components/product/ProductDetails';
+import LoadingSkeleton from '../../../components/ui/LoadingSkeleton';
+import { getProductById } from '@/lib/services/api';
 
-export default async function ProductPage({ params }: { params: { id: string } }) {
-  // Await the params object before using its properties
-  const { id } =  params;
-
-  // Find the product with matching ID
-  const product = dummyProducts.find(p => p.id === id);
-
-  // Show 404 if product not found
-  if (!product) return notFound();
-
+export default function ProductPage({ 
+  params 
+}: { 
+  params: { id: string }
+}) {
   return (
-    <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
-      <ProductDetails product={product} />
+    <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <Suspense fallback={<LoadingSkeleton />}>
+        <ProductContent id={params.id} />
+      </Suspense>
     </div>
   );
 }
 
-// Generate static paths at build time (SSG)
-export async function generateStaticParams() {
-  return dummyProducts.map((product) => ({
-    id: product.id,
-  }));
-}
-
-// Optional: Add metadata
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  // Await the params object before using its properties
-  const { id } =  params;
-
-  const product = dummyProducts.find(p => p.id === id);
-  return {
-    title: product ? `${product.name} - E-Commerce` : 'Product Not Found',
-  };
+async function ProductContent({ id }: { id: string }) {
+  try {
+  const product = await getProductById(id);
+  return <ProductDetails product={product} />;
+  } catch (error) {
+    return <div className='text-red-500'>Product not found</div>;
+  }
 }
