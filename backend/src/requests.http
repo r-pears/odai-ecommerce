@@ -2,8 +2,8 @@ POST http://localhost:5001/api/products
 Content-Type: application/json
 
 {
-  "name": "Wireless Keyboard",
-  "price": 49.99,
+  "name": "odai dahi",
+  "price": 450.99,
   "description": "A sleek wireless keyboard with backlit keys.",
   "stock": 20,
   "image": "https://example.com/keyboard.jpg",
@@ -14,13 +14,20 @@ Content-Type: application/json
 GET http://localhost:5001/api/products
 ###
 
-DELETE  http://localhost:5001/api/products/1
+DELETE  http://localhost:5001/api/products/13
 ###
 
 PUT  http://localhost:5001/api/products/1
 Content-Type: application/json
 
 {
-  "price": 39.99
+  "price": 420.69
 }
 ###
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "admin123"
+}

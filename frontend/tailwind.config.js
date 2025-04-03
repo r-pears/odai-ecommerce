@@ -9,7 +9,7 @@ module.exports = {
     },
     plugins: [require('daisyui')],
     daisyui: {
-        themes: ['light', 'dark', 'synthwave', 'dim', 'cupcake', 'cyberpunk'], // Add your desired themes here
-        logs: true, // Show loaded themes in console
+        themes: ['light', 'dark', 'synthwave', 'dim', 'cupcake', 'cyberpunk'], 
+        logs: true, 
     },
 }
