@@ -9,7 +9,7 @@ export default function FeaturesGrid() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Fast Shipping</h3>
+              <h2 className="text-xl font-semibold mb-2">Fast Shipping</h2>
               <p className="text-gray-600">Free delivery on orders over $99</p>
             </div>
 
@@ -19,7 +19,7 @@ export default function FeaturesGrid() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Quality Guarantee</h3>
+              <h2 className="text-xl font-semibold mb-2">Quality Guarantee</h2>
               <p className="text-gray-600">30-day hassle-free returns</p>
             </div>
 
@@ -29,7 +29,7 @@ export default function FeaturesGrid() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Secure Payment</h3>
+              <h2 className="text-xl font-semibold mb-2">Secure Payment</h2>
               <p className="text-gray-600">100% secure checkout process</p>
             </div>
           </div>

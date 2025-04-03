@@ -1,6 +1,6 @@
 "use client";
 
-import { Product } from '@/types/product';
+import { Product } from '@/lib/types/product';
 import { useCart } from '@/context/CartContext';
 import Link from 'next/link';
 import Image from 'next/image';
