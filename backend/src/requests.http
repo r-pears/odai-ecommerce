@@ -24,10 +24,16 @@ Content-Type: application/json
   "price": 420.69
 }
 ###
-POST http://localhost:3000/api/auth/login
+GET http://localhost:5001/api/users/login
+
+
+###
+POST http://localhost:5001/api/users/register
 Content-Type: application/json
 
 {
-  "email": "admin@example.com",
-  "password": "admin123"
+  "name": "Odai",
+  "email": "odai@example.com",
+  "password": "password123"
 }
+###

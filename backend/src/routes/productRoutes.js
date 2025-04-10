@@ -1,4 +1,7 @@
 import express from 'express';
+import { authenticate } from '../middleware/authMiddleware.js';
+
+
 import {
     createProductController,
     getProductsController,
@@ -10,9 +13,10 @@ import {
 const router = express.Router();
 
 router.get('/', getProductsController);
-router.get('/:id', getProductByIdController);
-router.post('/', createProductController);
-router.put('/:id', updateProductController);
-router.delete('/:id', deleteProductController);
+router.get('/auth', authenticate, getProductsController);
+router.get('/:id',  getProductByIdController);
+router.post('/', authenticate, createProductController);
+router.put('/:id', authenticate, updateProductController);
+router.delete('/:id', authenticate, deleteProductController);
 
 export default router;

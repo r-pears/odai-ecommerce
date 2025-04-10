@@ -1,5 +1,3 @@
-import { get } from 'mongoose';
-import Product from '../models/productModel.js';
 import { createProduct, getProducts, getProductById, updateProduct, deleteProduct } from '../service/product.js';
 
 // Get all products
