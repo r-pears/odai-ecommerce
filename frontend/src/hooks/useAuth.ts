@@ -6,8 +6,6 @@ export const getUserFromToken = () => {
 
   try {
     const decoded: { id: string; email: string; name?: string; exp: number } = jwtDecode(token);
-
-
     const currentTime = Date.now() / 1000; // Current time in seconds
     if (decoded.exp < currentTime) {
       localStorage.removeItem('token'); // Remove expired token
