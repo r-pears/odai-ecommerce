@@ -18,21 +18,31 @@ const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
+    // Check if window and localStorage are available before accessing
+    'Authorization': typeof window !== 'undefined' && localStorage.getItem('token')
+      ? `Bearer ${localStorage.getItem('token')}`
+      : '',
   },
 });
-
-axiosInstance.interceptors.request.use((config) => {
-  if (typeof window !== 'undefined') {
-    const token = localStorage.getItem('token'); // Access localStorage only in the browser
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+axiosInstance.interceptors.response.use(
+  (response) => response, // Pass through successful responses
+  (error) => {
+    if (error.response?.status === 401) {
+      // Handle unauthorized errors (e.g., token expired)
+      localStorage.removeItem('token'); // Remove invalid token
+      window.location.href = '/auth/login'; // Redirect to login page
     }
+    return Promise.reject(error); // Reject other errors
   }
-  return config;
-});
+);
 // GET All Products
 export const getAllProducts = async (): Promise<Product[]> => {
   const response = await axiosInstance.get('/products');
+  return response.data;
+};
+
+export const getAllAuthProducts = async (): Promise<Product[]> => {
+  const response = await axiosInstance.get('/products/auth');
   return response.data;
 };
 

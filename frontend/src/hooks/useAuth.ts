@@ -1,25 +1,21 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 
-export const useAuth = () => {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+export const getUserFromToken = () => {
+  const token = localStorage.getItem('token');
+  if (!token) return null;
 
-  const login = async (email: string, password: string) => {
-    setLoading(true);
-    setError('');
+  try {
+    const decoded: { id: string; email: string; name?: string; exp: number } = jwtDecode(token);
 
-    try {
-      const response = await axios.post('/api/auth/login', { email, password });
-      localStorage.setItem('isAdmin', 'true');
-      return response.data;
-    } catch (error: any) {
-      setError(error.response?.data?.message || 'Invalid email or password');
-      throw error;
-    } finally {
-      setLoading(false);
+
+    const currentTime = Date.now() / 1000; // Current time in seconds
+    if (decoded.exp < currentTime) {
+      localStorage.removeItem('token'); // Remove expired token
+      return null;
     }
-  };
-
-  return { login, loading, error };
+    return decoded;
+  } catch (error) {
+    console.error('Invalid token:', error);
+    return null;
+  }
 };
