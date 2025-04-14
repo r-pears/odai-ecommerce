@@ -12,12 +12,18 @@ This is a full-stack **Ecommerce Application** built with **Next.js** for the fr
 - Responsive design for mobile, tablet, and desktop devices.
 - Product listing and detailed product pages.
 - Add-to-cart functionality.
+- **User Authentication**: Users can register, log in, and manage their profiles.
+
 
 ### Backend
 - Built with **Node.js** and **Express**.
 - RESTful API for managing products.
 - MongoDB database for storing product and user data.
 - Sequential product IDs for better readability.
+- **Authentication and Authorization**:
+  - Users must log in to perform actions like creating, updating, or deleting products.
+  - Protected routes ensure only authenticated users can modify the database.
+
 
 ---
 
@@ -27,7 +33,7 @@ This is a full-stack **Ecommerce Application** built with **Next.js** for the fr
 Make sure you have the following installed:
 - **Node.js** (v16 or higher)
 - **npm** or **yarn**
-- **MongoDB** (local or cloud-based, e.g., MongoDB Atlas)
+- **MongoDB** (MongoDB Atlas)
 
 ---
 
@@ -51,16 +57,19 @@ cd ../frontend
 npm install
 ```
 Environment Variables
+
+# BackEnd
 Create a .env file in the backend directory and add the following:
 
-MONGO_URI=your-mongodb-connection-string
+MONGO_URI= Connect with me so I can give you the URL
 PORT=5001
 
-For the frontend, create a .env.local file in the frontend directory and add:
+# FrontEnd
+For the frontend, create a .env file in the frontend directory and add:
 
-NEXT_PUBLIC_API_URL=http://localhost:5001
+** Connect with me so I can give you the URL
 
-Running the Application
+# Running the Application
 
 1. Start the backend server:
 
@@ -79,35 +88,22 @@ npm run dev
 Frontend: http://localhost:3000
 Backend API: http://localhost:5001
 
-```bash
-ecommerce/
-├── backend/
-│   ├── src/
-│   │   ├── controllers/       # API controllers
-│   │   ├── models/            # Mongoose models
-│   │   ├── routes/            # API routes
-│   │   ├── config/            # Database and environment config
-│   │   └── server.js          # Entry point for the backend
-│   ├── .env                   # Backend environment variables
-│   └── package.json           # Backend dependencies
-├── frontend/
-│   ├── src/
-│   │   ├── app/               # Next.js app directory
-│   │   ├── components/        # Reusable components
-│   │   ├── pages/             # Static and dynamic pages
-│   │   └── styles/            # Global and component-specific styles
-│   ├── .env.local             # Frontend environment variables
-│   └── package.json           # Frontend dependencies
-├── .gitignore                 # Ignored files and directories
-└── README.md                  # Project documentation
-```
+
+
 ### API Endpoints
- # Products
-GET /api/products - Fetch all products.
-GET /api/products/:id - Fetch a single product by ID.
-POST /api/products - Add a new product.
-PUT /api/products/:id - Update a product by ID.
-DELETE /api/products/:id - Delete a product by ID.
+# Products
+ - GET /api/products - Fetch all products.
+ - GET /api/products/:id - Fetch a single product by ID.
+ - POST /api/products - Add a new product.
+ - PUT /api/products/:id - Update a product by ID.
+ - DELETE /api/products/:id - Delete a product by ID.
+
+# Users
+ - GET /api/auth/products - Fetch the product so it could be updated or deleted.
+ - POST /api/auth/register - Register a new user.
+ - POST /api/auth/login - Log in a user and receive a JWT token.
+ - PUT /api/auth/profile - Update user profile (requires authentication).
+
 
 ###Technologies Used
 
@@ -121,6 +117,25 @@ DELETE /api/products/:id - Delete a product by ID.
 - **Express** - Web framework for building RESTful APIs.
 - **MongoDB** - NoSQL database for storing product and user data.
 - **Mongoose** - ODM for MongoDB.
+- JWT (JSON Web Tokens) - For secure user authentication and authorization.
+
+
+
+### User Authentication
+- Users can register and log in to the application.
+- A JWT token is issued upon successful login and is stored in the browser's localStorage.
+- The token is used to authenticate requests to protected routes.
+
+### Authorization
+- Only authenticated users can perform the following actions:
+    ・ Add a new product.
+    ・ Update an existing product.
+    ・ Delete a product.
+- Unauthorized users attempting to access protected routes will receive a 401 Unauthorized response.
+
+### Security
+-  Passwords are hashed using bcrypt before being stored in the database.
+- Protected routes are secured using a custom authenticate middleware that verifies the JWT token.
 
 ### Deployment
 
