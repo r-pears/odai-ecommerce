@@ -58,18 +58,18 @@ npm install
 ```
 Environment Variables
 
-# BackEnd
+### BackEnd
 Create a .env file in the backend directory and add the following:
 
 MONGO_URI= Connect with me so I can give you the URL
 PORT=5001
 
-# FrontEnd
+### FrontEnd
 For the frontend, create a .env file in the frontend directory and add:
 
 ** Connect with me so I can give you the URL
 
-# Running the Application
+## Running the Application
 
 1. Start the backend server:
 
@@ -91,21 +91,21 @@ Backend API: http://localhost:5001
 
 
 ### API Endpoints
-# Products
+### Products
  - GET /api/products - Fetch all products.
  - GET /api/products/:id - Fetch a single product by ID.
  - POST /api/products - Add a new product.
  - PUT /api/products/:id - Update a product by ID.
  - DELETE /api/products/:id - Delete a product by ID.
 
-# Users
+### Users
  - GET /api/auth/products - Fetch the product so it could be updated or deleted.
  - POST /api/auth/register - Register a new user.
  - POST /api/auth/login - Log in a user and receive a JWT token.
  - PUT /api/auth/profile - Update user profile (requires authentication).
 
 
-###Technologies Used
+### Technologies Used
 
 ### Frontend
 - **Next.js** - React framework for server-side rendering and static site generation.
@@ -139,11 +139,11 @@ Backend API: http://localhost:5001
 
 ### Deployment
 
-# Frontend
+### Frontend
 
 The frontend can be deployed on platforms like Vercel or Netlify.
 
-# Backend
+### Backend
 
 The backend can be deployed on platforms like Heroku, Render, or AWS.
 
