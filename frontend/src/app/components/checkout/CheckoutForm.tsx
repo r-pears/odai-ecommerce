@@ -5,7 +5,6 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { createPaymentIntent } from '@/lib/stripe';
 import { useState } from 'react';
 import Link from 'next/link';
 
@@ -37,18 +36,26 @@ export default function CheckoutForm({ total }: { total: number }) {
     if (!stripe || !elements) return;
     setLoading(true);
     setError(null);
-
+  
     try {
-      // Create payment intent
-      const { error: stripeError, paymentIntent } = await createPaymentIntent({
-        amount: total * 100,
-        currency: 'usd',
+      // Call the API route to create the payment intent
+      const response = await fetch('/api/payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: total * 100, // Convert to cents
+          currency: 'usd',
+        }),
       });
-
-      if (stripeError || !paymentIntent) {
-        throw new Error(stripeError?.message || 'Payment failed');
+  
+      const result = await response.json();
+  
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to create payment intent');
       }
-
+  
+      const { paymentIntent } = result;
+  
       // Confirm card payment
       const { error: confirmError } = await stripe.confirmCardPayment(
         paymentIntent.client_secret!,
@@ -65,14 +72,14 @@ export default function CheckoutForm({ total }: { total: number }) {
                 country: data.country,
               },
             },
-          },
+          }
         }
       );
-
+  
       if (confirmError) {
         throw new Error(confirmError.message);
       }
-
+  
       // Clear cart on success
       clearCart();
       window.location.href = '/checkout/success';
