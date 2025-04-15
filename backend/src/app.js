@@ -15,7 +15,7 @@ app.use(
     cors({
       origin: [
         'http://localhost:3000',
-        'https://your-netlify-site.netlify.app', 
+        'https://sellby.netlify.app', 
       ],
     })
   );
