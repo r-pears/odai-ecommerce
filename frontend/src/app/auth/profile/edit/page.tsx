@@ -32,7 +32,7 @@ export default function EditProfilePage() {
 
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        'http://localhost:5001/api/users/profile',
+        `${process.env.NEXT_PUBLIC_API_URL}/users/profile`,
         formData,
         {
           headers: {

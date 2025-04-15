@@ -16,7 +16,7 @@ export default function RegisterPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/api/users/register', formData);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users/profile`, formData);
       console.log('User registered:', response.data);
       router.push('/auth/login'); // Redirect to login page
     } catch (err: any) {

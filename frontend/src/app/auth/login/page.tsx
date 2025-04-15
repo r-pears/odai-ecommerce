@@ -16,7 +16,7 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5001/api/users/login', formData);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users/login`, formData);
       console.log('Login successful:', response.data);
       localStorage.setItem('token', response.data.token); // Store JWT token
       router.push('/auth/profile'); // Redirect to home page
