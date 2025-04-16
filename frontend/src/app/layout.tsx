@@ -10,10 +10,35 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'E-Commerce Store',
+  title: 'Sellby Store',
   description: 'Your favorite online store',
+  keywords: ['ecommerce', 'online store', 'buy online', 'shopping'],
+  authors: [{ name: 'Odai Dahi', url: 'https://www.linkedin.com/in/odai-dahi/' }],
+  openGraph: {
+    title: 'Sellby Store',
+    description: 'Your favorite online store',
+    url: 'https://sellby.netlify.app',
+    siteName: 'Sellby Store',
+    images: [
+      {
+        url: 'https://sellby.netlify.app/seo/seo.png', 
+        width: 1200,
+        height: 630,
+        alt: 'Sellby Store',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sellby Store',
+    description: 'Your favorite online store',
+    images: ['hhttps://sellby.netlify.app/seo/seo.png'],
+    creator: '@OdaiDahi',
+  },
+  metadataBase: new URL('https://sellby.netlify.app'),
 };
-
 
 export default function RootLayout({
   children,
