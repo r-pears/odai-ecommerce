@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sellby Store',
     description: 'Your favorite online store',
-    images: ['hhttps://sellby.netlify.app/seo/seo.png'],
+    images: ['https://sellby.netlify.app/seo/seo.png'],
     creator: '@OdaiDahi',
   },
   metadataBase: new URL('https://sellby.netlify.app'),
