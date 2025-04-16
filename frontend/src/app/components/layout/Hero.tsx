@@ -24,7 +24,7 @@ export default function Hero() {
                 <Link href="/products" className="btn btn-primary px-8 py-3 text-lg">
                   Shop Now
                 </Link>
-                <Link href="/sale" className="btn btn-outline px-8 py-3 text-lg">
+                <Link href="/products" className="btn btn-outline px-8 py-3 text-lg">
                   On Sale
                 </Link>
               </div>

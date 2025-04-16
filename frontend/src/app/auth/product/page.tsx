@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { deleteProduct, createProduct, Product, getAllAuthProducts } from '@/lib/services/api';
+import { deleteProduct, Product, getAllAuthProducts } from '@/lib/services/api';
 import { useRouter } from 'next/navigation';
 import ConfirmationDialog from '@/app/components/ui/ConfirmationDialog';
 import { MdDeleteOutline } from "react-icons/md";

@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getUserFromToken } from '../../../hooks/useAuth' 
-import { set } from 'react-hook-form';
 
 export default function ProfilePage() {
   const router = useRouter();

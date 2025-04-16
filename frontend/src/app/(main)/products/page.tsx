@@ -4,9 +4,32 @@ import HeroPro from '@/app/components/layout/HeroPro';
 import { getAllProducts } from '@/lib/services/api';
 
 export const metadata: Metadata = {
-  title: 'All Products - E-Commerce',
-  description: 'Browse our full collection of products',
+  title: 'All Products - Sellby Store',
+  description: 'Browse our full collection of products available at Sellby Store.',
+  openGraph: {
+    title: 'All Products - Sellby Store',
+    description: 'Browse our full collection of products available at Sellby Store.',
+    url: 'https://sellby.netlify.app/products',
+    siteName: 'Sellby Store',
+    images: [
+      {
+        url: 'https://sellby.netlify.app/seo/products.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sellby Store',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'All Products - Sellby Store',
+    description: 'Browse our full collection of products available at Sellby Store.',
+    images: ['https://sellby.netlify.app/seo/products.png'],
+  },
 };
+
 
 export default async function ProductsPage() {
   const products = await getAllProducts();

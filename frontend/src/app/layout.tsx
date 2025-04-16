@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { CartProvider } from '../context/CartContext';
-import { UserProvider } from "../context/UserContext"; // Import UserProvider
+import { UserProvider } from "../context/UserContext"; 
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import './globals.css';
@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     creator: '@OdaiDahi',
   },
   metadataBase: new URL('https://sellby.netlify.app'),
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({

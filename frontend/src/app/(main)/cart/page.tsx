@@ -2,8 +2,30 @@ import { Metadata } from 'next';
 import CartContents from '../../components/cart/CartContents';
 
 export const metadata: Metadata = {
-  title: 'Shopping Cart - E-Commerce',
-  description: 'Your shopping cart on E-Commerce',
+  title: 'Your Shopping Cart - Sellby Store',
+  description: "Review the items in your shopping cart and proceed to checkout. Don’t miss out on your favorite products!",
+  openGraph: {
+    title: "Your Shopping Cart - Sellby Store",
+    description: "Review the items in your shopping cart and proceed to checkout. Don’t miss out on your favorite products!",
+    url: 'https://sellby.netlify.app/cart',
+    siteName: 'Sellby Store',
+    images: [
+      {
+        url: 'https://sellby.netlify.app/seo/cart.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sellby Store Shopping Cart',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Your Shopping Cart - Sellby Store',
+    description: "Review the items in your shopping cart and proceed to checkout. Don’t miss out on your favorite products!",
+    images: ['https://sellby.netlify.app/seo/cart.png'],
+  },
 };
 
 // Make sure this is the default export
