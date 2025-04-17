@@ -49,13 +49,14 @@ export default function Header() {
               <button
                 onClick={() => setIsAccountDropdownOpen(!isAccountDropdownOpen)}
                 className="relative p-2 hover:bg-gray-100 rounded-lg transition-colors"
-
                 aria-label="Account Menu"
               >
                 <VscAccount className="text-black text-xl" />
               </button>
               {isAccountDropdownOpen && (
-                <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+                style={{ zIndex: 50, minWidth: '100%' }}
+                >
                   {user ? (
                     <>
                       <li>

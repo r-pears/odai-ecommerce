@@ -142,9 +142,9 @@ Backend API: http://localhost:5001
 
 ### Authorization
 - Only authenticated users can perform the following actions:
-    ・ Add a new product.
-    ・ Update an existing product.
-    ・ Delete a product.
+  ・ Add a new product.
+  ・ Update an existing product.
+  ・ Delete a product.
 - Unauthorized users attempting to access protected routes will receive a 401 Unauthorized response.
 
 ### Security
