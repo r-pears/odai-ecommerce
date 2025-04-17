@@ -1,3 +1,17 @@
+# Table of Contents
+1. [Project Overview](#ecommerce-project)
+2. [Features](#features)
+3. [Getting Started](#getting-started)
+4. [API Endpoints](#api-endpoints)
+5. [Technologies Used](#technologies-used)
+6. [Accessibility and SEO Documentation](#accessibility-and-seo-documentation)
+7. [Tracking Implementation Documentation](#tracking-implementation-documentation)
+8. [Security Threats and Mitigation Documentation](#security-threats-and-mitigation-documentation)
+9. [Contributing](#contributing)
+
+
+
+
 # Ecommerce Project
 
 This is a full-stack **Ecommerce Application** built with **Next.js** for the frontend and a **Node.js/Express** backend. The project is designed to provide a seamless shopping experience with features like product browsing, adding to cart, and managing inventory.
@@ -166,10 +180,21 @@ git push origin feature-name
 ```
 5. Open a pull request.
 
-License
-This project is licensed under the MIT License.
+### 
 
-Acknowledgments
-❣ Next.js Documentation
-❣ MongoDB Documentation
-❣ Tailwind CSS Documentation
+# Accessibility and SEO Documentation
+
+To make the app accessible, I used semantic HTML elements like <header>, <main>, and <section> for better screen reader support. All images have descriptive alt text, and buttons/links are keyboard-friendly with visible focus styles. ARIA roles were added where necessary to improve accessibility for assistive technologies. Additionally, color contrast ratios were tested to meet WCAG standards, ensuring readability for users with visual impairments.
+
+For SEO, I added unique titles, descriptions, and Open Graph tags using Next.js’s Metadata API. I also included a sitemap and robots.txt to help search engines crawl the site. Lazy loading improves performance and user experience. Accessibility and SEO were validated using tools like Lighthouse and Axe to ensure compliance with best practices.
+# Tracking Implementation Documentation
+
+Google Analytics is set up to track user interactions and improve the site based on real usage data. IPs are anonymized, and we follow GDPR rules—users can opt out anytime via the Privacy Policy. A cookie banner is displayed to inform users about tracking and provide them with the option to manage their preferences. 
+
+Additionally, Google Tag Manager is used to manage tracking scripts efficiently, ensuring minimal impact on page performance. This setup allows us to gather insights while respecting user privacy and complying with data protection regulations.
+
+# Security Threats and Mitigation Documentation
+
+To protect against common threats like XSS and injection attacks, user inputs are validated and sanitized. We use DOMPurify for cleaning HTML and HTTP-only cookies for sensitive data. Since we’re using MongoDB with Mongoose, queries are parameterized and secure by default, reducing the risk of injection.
+
+Additionally, rate limiting is implemented on sensitive routes like login and registration to prevent brute force attacks. CAPTCHAs are used to verify human users during authentication processes. Security testing was conducted using tools like OWASP ZAP to identify and mitigate vulnerabilities. These measures ensure a secure environment for both users and their data.
