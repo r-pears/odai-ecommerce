@@ -186,14 +186,22 @@ git push origin feature-name
 To make the app accessible, I used semantic HTML elements like < header >, < main >, and < section > ecs.. for better screen reader support. All images have descriptive alt text, and buttons/links are keyboard-friendly with visible focus styles. ARIA roles were added where necessary to improve accessibility for assistive technologies. Additionally, color contrast ratios were tested to meet WCAG standards, ensuring readability for users with visual impairments.
 
 For SEO, I added unique titles, descriptions, and Open Graph tags using Next.js’s Metadata API. I also included a sitemap and robots.txt to help search engines crawl the site. Lazy loading improves performance and user experience. Accessibility and SEO were validated using tools like Lighthouse and Axe to ensure compliance with best practices.
+
 # Tracking Implementation Documentation
 
-Google Analytics is set up to track user interactions and improve the site based on real usage data. IPs are anonymized, and we follow GDPR rules—users can opt out anytime via the Privacy Policy. A cookie banner is displayed to inform users about tracking and provide them with the option to manage their preferences. 
+Google Analytics is set up to track user interactions and improve the site based on real usage data. IPs are anonymized, and I follow GDPR rules—users can opt out anytime via the Privacy Policy.
+Next step whould be an cookie banner were it can display to inform users about tracking and provide them with the option to manage their preferences. 
 
-Additionally, Google Tag Manager is used to manage tracking scripts efficiently, ensuring minimal impact on page performance. This setup allows us to gather insights while respecting user privacy and complying with data protection regulations.
+Additionally, Google Tag Manager is used to manage tracking scripts efficiently, ensuring minimal impact on page performance. This setup allows me to gather insights while respecting user privacy and complying with data protection regulations.
 
 # Security Threats and Mitigation Documentation
 
-To protect against common threats like XSS and injection attacks, user inputs are validated and sanitized. We use DOMPurify for cleaning HTML and HTTP-only cookies for sensitive data. Since we’re using MongoDB with Mongoose, queries are parameterized and secure by default, reducing the risk of injection.
+Passwords are securely hashed using `bcrypt` before being stored in the database, ensuring user credentials are protected even in the event of a data breach.
 
-Additionally, rate limiting is implemented on sensitive routes like login and registration to prevent brute force attacks. CAPTCHAs are used to verify human users during authentication processes. Security testing was conducted using tools like OWASP ZAP to identify and mitigate vulnerabilities. These measures ensure a secure environment for both users and their data.
+JWT tokens are used for authentication, and they are stored localStorage which is risky beacuse of:
+XSS Vulnerability: If an attacker injects malicious JavaScript into the application, they can access the JWT stored in localStorage and use it to impersonate users.
+No Automatic Protection: Unlike cookies, localStorage does not have built-in security features like HttpOnly or Secure flags.
+
+To enhance the security of the application, several measures have been implemented. Sensitive routes like login and registration are protected using rate limiting with `express-rate-limit` to prevent brute force attacks.
+
+What I can do in the futur is using libraries like `Joi` and `express-validator` to ensure only valid data is processed. Additionally also in the futur , `express-mongo-sanitize` could be used to prevent NoSQL injection attacks by removing malicious payloads from incoming requests.

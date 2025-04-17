@@ -52,7 +52,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 }`}
             />
           ))}
-          <span className="ml-2 text-sm text-gray-600">({product.rating})</span>
+          <span className="ml-2 text-sm text-gray-300">({product.rating})</span>
         </div>
 
         <div className="card-actions mt-4">

@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
             {/* Customer Service */}
             <div>
-              <h3 className="footer-title">Customer Service</h3>
+              <h2 className="footer-title">Customer Service</h2>
               <ul className="space-y-2">
                 <li><a className="link link-hover">Contact Us</a></li>
                 <li><a className="link link-hover">Shipping Policy</a></li>
@@ -18,7 +18,7 @@ export default function Footer() {
   
             {/* Company */}
             <div>
-              <h3 className="footer-title">Company</h3>
+              <h2 className="footer-title">Company</h2>
               <ul className="space-y-2">
                 <li><a className="link link-hover">About Us</a></li>
                 <li><a className="link link-hover">Careers</a></li>
@@ -30,10 +30,10 @@ export default function Footer() {
   
             {/* Legal */}
             <div>
-              <h3 className="footer-title">Legal</h3>
+              <h2 className="footer-title">Legal</h2>
               <ul className="space-y-2">
-                <li><a className="link link-hover">Terms of Service</a></li>
-                <li><a className="link link-hover">Privacy Policy</a></li>
+                <li><a className="link link-hover" href="/terms">Terms of Service</a></li>
+                <li><a className="link link-hover" href="/terms/privacy">Privacy Policy</a></li>
                 <li><a className="link link-hover">Cookie Policy</a></li>
                 <li><a className="link link-hover">Accessibility</a></li>
               </ul>
@@ -41,7 +41,7 @@ export default function Footer() {
   
             {/* Newsletter */}
             <div>
-              <h3 className="footer-title">Stay Updated</h3>
+              <h2 className="footer-title">Stay Updated</h2>
               <form className="form-control">
                 <div className="relative">
                   <input 
@@ -56,7 +56,7 @@ export default function Footer() {
               </form>
               
               <div className="mt-4">
-                <h4 className="font-medium mb-2">Secure Payments</h4>
+                <h3 className="font-medium mb-2">Secure Payments</h3>
                 <div className="flex gap-3">
                   <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />

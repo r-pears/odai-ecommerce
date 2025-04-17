@@ -17,7 +17,7 @@ export default function Hero() {
               <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
                 Discover Your Perfect Style
               </h1>
-              <p className="text-lg md:text-xl mb-8 text-gray-600">
+              <p className="text-lg md:text-xl mb-8 text-gray-300">
                 Explore our premium collection of clothing and accessories curated for your unique personality
               </p>
               <div className="flex gap-4 justify-center md:justify-start">
@@ -35,7 +35,7 @@ export default function Hero() {
               <div className="relative aspect-square rounded-lg overflow-hidden shadow-xl">
                 <Image
                   src="/images/hero.jpg"
-                  alt="Fashion Collection"
+                  alt="Fashion Collection a women wearing a stylish outfit"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"

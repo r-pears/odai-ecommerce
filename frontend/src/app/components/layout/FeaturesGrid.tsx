@@ -1,6 +1,6 @@
 export default function FeaturesGrid() {
     return (
-        <section className="bg-base-100 py-16 mt-16">
+        <section className="bg-base-100 py-16 mt-16" role="region" aria-labelledby="features-heading">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">
@@ -10,7 +10,7 @@ export default function FeaturesGrid() {
                 </svg>
               </div>
               <h2 className="text-xl font-semibold mb-2">Fast Shipping</h2>
-              <p className="text-gray-600">Free delivery on orders over $99</p>
+              <p className="text-gray-300">Free delivery on orders over $99</p>
             </div>
 
             <div className="text-center p-6">
@@ -20,7 +20,7 @@ export default function FeaturesGrid() {
                 </svg>
               </div>
               <h2 className="text-xl font-semibold mb-2">Quality Guarantee</h2>
-              <p className="text-gray-600">30-day hassle-free returns</p>
+              <p className="text-gray-300">30-day hassle-free returns</p>
             </div>
 
             <div className="text-center p-6">
@@ -30,7 +30,7 @@ export default function FeaturesGrid() {
                 </svg>
               </div>
               <h2 className="text-xl font-semibold mb-2">Secure Payment</h2>
-              <p className="text-gray-600">100% secure checkout process</p>
+              <p className="text-gray-300">100% secure checkout process</p>
             </div>
           </div>
         </div>

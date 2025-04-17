@@ -29,11 +29,16 @@ export default function LoginPage() {
     <div className="flex justify-center items-center h-screen bg-base-200">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
-          <h1 className="text-2xl font-bold text-center mb-4">Login</h1>
-          {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-          <form onSubmit={handleSubmit}>
+          <h1 className="text-2xl font-bold text-center mb-4" id='login-heading'>
+            Login
+          </h1>
+          {error && (<p className="text-red-500 text-center mb-4" aria-live="polite">
+            {error}
+          </p>
+          )}
+          <form onSubmit={handleSubmit} role="form" aria-labelledby="login-heading">
             <div className="form-control mb-4">
-              <label className="label">
+              <label className="label" htmlFor="email">
                 <span className="label-text">Email</span>
               </label>
               <input
@@ -43,10 +48,11 @@ export default function LoginPage() {
                 value={formData.email}
                 onChange={handleChange}
                 className="input input-bordered w-full"
+                aria-required="true"
               />
             </div>
             <div className="form-control mb-4">
-              <label className="label">
+              <label className="label" htmlFor="password">
                 <span className="label-text">Password</span>
               </label>
               <input
@@ -56,9 +62,10 @@ export default function LoginPage() {
                 value={formData.password}
                 onChange={handleChange}
                 className="input input-bordered w-full"
+                aria-required="true"
               />
             </div>
-            <button type="submit" className="btn btn-primary w-full">
+            <button type="submit" className="btn btn-primary w-full" aria-label="Submit login form">
               Login
             </button>
           </form>
