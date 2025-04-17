@@ -183,7 +183,7 @@ git push origin feature-name
 
 # Accessibility and SEO Documentation
 
-To make the app accessible, I used semantic HTML elements like <header>, <main>, and <section> for better screen reader support. All images have descriptive alt text, and buttons/links are keyboard-friendly with visible focus styles. ARIA roles were added where necessary to improve accessibility for assistive technologies. Additionally, color contrast ratios were tested to meet WCAG standards, ensuring readability for users with visual impairments.
+To make the app accessible, I used semantic HTML elements like < header >, < main >, and < section > ecs.. for better screen reader support. All images have descriptive alt text, and buttons/links are keyboard-friendly with visible focus styles. ARIA roles were added where necessary to improve accessibility for assistive technologies. Additionally, color contrast ratios were tested to meet WCAG standards, ensuring readability for users with visual impairments.
 
 For SEO, I added unique titles, descriptions, and Open Graph tags using Next.js’s Metadata API. I also included a sitemap and robots.txt to help search engines crawl the site. Lazy loading improves performance and user experience. Accessibility and SEO were validated using tools like Lighthouse and Axe to ensure compliance with best practices.
 # Tracking Implementation Documentation
