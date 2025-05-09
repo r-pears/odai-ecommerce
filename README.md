@@ -189,7 +189,7 @@ For SEO, I added unique titles, descriptions, and Open Graph tags using Next.jsâ
 
 # Tracking Implementation Documentation
 
-Google Analytics is set up to track user interactions and improve the site based on real usage data. IPs are anonymized, and I follow GDPR rulesâ€”users can opt out anytime via the Privacy Policy.
+Google Analytics is set up to track user interactions and improve the site based on real usage data. 
 Next step whould be an cookie banner were it can display to inform users about tracking and provide them with the option to manage their preferences. 
 
 Additionally, Google Tag Manager is used to manage tracking scripts efficiently, ensuring minimal impact on page performance. This setup allows me to gather insights while respecting user privacy and complying with data protection regulations.

@@ -3,12 +3,9 @@ import Counter from '../models/counterModel.js';
 
 export const createProduct = async (req, res) => {
   try {
-    console.log('Request Body:', req.body); // Log the incoming data
-
     const { name, price, description, stock, image, category } = req.body;
 
     if (!name || !price || !description || !stock || !image || !category) {
-      console.log('Invalid product data:', req.body); // Log invalid data
       return res.status(400).json({ message: 'Invalid product data' });
     }
 
