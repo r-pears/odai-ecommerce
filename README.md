@@ -187,11 +187,11 @@ To make the app accessible, I used semantic HTML elements like < header >, < mai
 
 For SEO, I added unique titles, descriptions, and Open Graph tags using Next.js’s Metadata API. I also included a sitemap and robots.txt to help search engines crawl the site. Lazy loading improves performance and user experience. Accessibility and SEO were validated using tools like Lighthouse and Axe to ensure compliance with best practices.
 
-# Tracking Implementation Documentation (PAUSED)
+# Tracking Implementation Documentation
 
-This project uses Google Analytics, implemented via Google Tag Manager (PAUSED), to gather insights on how users interact with the site — such as which pages are visited and how long users stay. This information helps guide improvements to the user experience.
+This project uses Google Analytics, to gather insights on how users interact with the site — such as which pages are visited and how long users stay. This information helps guide improvements to the user experience.
 
-### Which is pused right now until I fix the banner
+### Which is pused right now until further notice
 
 Currently, tracking is activated by default when the site loads. No cookie banner or consent mechanism is yet in place. However:
 1. No personally identifiable information is collected.
