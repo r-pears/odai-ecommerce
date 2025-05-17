@@ -189,12 +189,12 @@ For SEO, I added unique titles, descriptions, and Open Graph tags using Next.js�
 
 # Tracking Implementation Documentation (PAUSED)
 
-This project uses Google Analytics, implemented via Google Tag Manager, to gather insights on how users interact with the site — such as which pages are visited and how long users stay. This information helps guide improvements to the user experience.
+This project uses Google Analytics, implemented via Google Tag Manager (PAUSED), to gather insights on how users interact with the site — such as which pages are visited and how long users stay. This information helps guide improvements to the user experience.
 
 ### Which is pused right now until I fix the banner
 
 Currently, tracking is activated by default when the site loads. No cookie banner or consent mechanism is yet in place. However:
-1. No personally identifiable information (PII) is collected.
+1. No personally identifiable information is collected.
 2. IP anonymization is enabled in GA.
 3. The data is used solely for internal, non-commercial insights during development.
 
@@ -202,7 +202,7 @@ Since this is a non-commercial, educational project, and does not collect any us
 
 What i could do next is:
 
-This project is launched on Netlify for show casing only,and adding consent mechanism would be necessary to fully align with privacy regulations like GDPR.
+This project is launched on Netlify for show casing only, and adding consent mechanism would be necessary to fully align with privacy regulations like GDPR.
 
 If you have any concerns please contact me on my email how u can find in my GitHub bio.
 # Security Threats and Mitigation Documentation
