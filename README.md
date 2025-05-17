@@ -191,7 +191,7 @@ For SEO, I added unique titles, descriptions, and Open Graph tags using Next.jsâ
 
 This project uses Google Analytics, implemented via Google Tag Manager, to gather insights on how users interact with the site â€” such as which pages are visited and how long users stay. This information helps guide improvements to the user experience.
 
-(### Which is pused right now until I fix the banner)
+### Which is pused right now until I fix the banner
 
 Currently, tracking is activated by default when the site loads. No cookie banner or consent mechanism is yet in place. However:
 1. No personally identifiable information (PII) is collected.
