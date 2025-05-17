@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="cyberpunk" className='scroll-smooth'>
+    <html lang="en" data-theme="dark" className='scroll-smooth'>
       <body className={inter.className}>
         {/* Google Analytics Script */}
         <Script
