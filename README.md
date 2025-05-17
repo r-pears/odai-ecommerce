@@ -187,9 +187,11 @@ To make the app accessible, I used semantic HTML elements like < header >, < mai
 
 For SEO, I added unique titles, descriptions, and Open Graph tags using Next.js’s Metadata API. I also included a sitemap and robots.txt to help search engines crawl the site. Lazy loading improves performance and user experience. Accessibility and SEO were validated using tools like Lighthouse and Axe to ensure compliance with best practices.
 
-# Tracking Implementation Documentation
+# Tracking Implementation Documentation (PAUSED)
 
-This project uses Google Analytics (GA), implemented via Google Tag Manager (GTM), to gather insights on how users interact with the site — such as which pages are visited and how long users stay. This information helps guide improvements to the user experience.
+This project uses Google Analytics, implemented via Google Tag Manager, to gather insights on how users interact with the site — such as which pages are visited and how long users stay. This information helps guide improvements to the user experience.
+
+(### Which is pused right now until I fix the banner)
 
 Currently, tracking is activated by default when the site loads. No cookie banner or consent mechanism is yet in place. However:
 1. No personally identifiable information (PII) is collected.
@@ -202,6 +204,7 @@ What i could do next is:
 
 This project is launched on Netlify for show casing only,and adding consent mechanism would be necessary to fully align with privacy regulations like GDPR.
 
+If you have any concerns please contact me on my email how u can find in my GitHub bio.
 # Security Threats and Mitigation Documentation
 
 Passwords are securely hashed using `bcrypt` before being stored in the database, ensuring user credentials are protected even in the event of a data breach.
