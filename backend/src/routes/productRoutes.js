@@ -12,6 +12,8 @@ import {
 
 const router = express.Router();
 
+// if the routes become too many or complex, consider splitting them into separate files or adding a helper function
+
 router.get('/', getProductsController);
 router.get('/auth', authenticate, getProductsController);
 router.get('/:id',  getProductByIdController);
