@@ -8,7 +8,8 @@ router.post('/register', registerUserController);
 router.post('/login', loginUserController);
 router.put('/profile', authenticate, updateUserProfileController);
 
-router.get('/', async (req, res) => {
+// underscore req is a common convention to indicate that the request is not used in the handler
+router.get('/', async (_req, res) => {
     try {
       const users = await User.find().select('-password'); // Exclude passwords from the response
       res.status(200).json(users);
