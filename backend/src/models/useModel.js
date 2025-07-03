@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+// same here i would add validation see productModel.js for example
+
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
