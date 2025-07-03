@@ -1,13 +1,15 @@
 POST http://localhost:5001/api/products
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWZjNmZiZTg5YjQ1NDA2NWZjZjlhMiIsImVtYWlsIjoib2RhaUBleGFtcGxlLmNvbSIsIm5hbWUiOiJPZGFpIiwiaWF0IjoxNzQ1NDkyMjU5LCJleHAiOjE3NDU0OTU4NTl9.IxqBkfNUFsAjLyDvQGQqKCToPvqL16J1heTPdGFwSMQ
+
 
 {
-  "name": "odai dahi",
-  "price": 450.99,
-  "description": "A sleek wireless keyboard with backlit keys.",
+  "name": "Gucci cap",
+  "price": 415.99,
+  "description": "A stylish Gucci cap that can get you arrested in Sweden.",
   "stock": 20,
-  "image": "https://example.com/keyboard.jpg",
-  "category": "electronics"
+  "image": "https://www.gucci.com/se/en_gb/pr/men/accessories-for-men/hats-and-gloves-for-men/baseball-hats-for-men/original-gg-canvas-baseball-hat-with-web-p-200035KQWBG9791",
+  "category": "clothing"
 }
 ###
 
@@ -17,8 +19,9 @@ GET http://localhost:5001/api/products
 DELETE  http://localhost:5001/api/products/13
 ###
 
-PUT  http://localhost:5001/api/products/1
+PUT  http://localhost:5001/api/products/23
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWZjNmZiZTg5YjQ1NDA2NWZjZjlhMiIsImVtYWlsIjoib2RhaUBleGFtcGxlLmNvbSIsIm5hbWUiOiJPZGFpIiwiaWF0IjoxNzQ1NDkyMjU5LCJleHAiOjE3NDU0OTU4NTl9.IxqBkfNUFsAjLyDvQGQqKCToPvqL16J1heTPdGFwSMQ
 
 {
   "price": 420.69
@@ -28,7 +31,7 @@ GET http://localhost:5001/api/users/login
 
 
 ###
-POST http://localhost:5001/api/users/register
+POST http://localhost:5001/api/users/login
 Content-Type: application/json
 
 {
@@ -37,3 +40,10 @@ Content-Type: application/json
   "password": "password123"
 }
 ###
+POST http://localhost:5001/api/users/login
+Content-Type: application/json
+
+{
+  "email": "odai@example.com",
+  "password": "password123"
+}

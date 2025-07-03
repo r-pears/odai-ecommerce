@@ -189,11 +189,22 @@ For SEO, I added unique titles, descriptions, and Open Graph tags using Next.js�
 
 # Tracking Implementation Documentation
 
-Google Analytics is set up to track user interactions and improve the site based on real usage data. IPs are anonymized, and I follow GDPR rules—users can opt out anytime via the Privacy Policy.
-Next step whould be an cookie banner were it can display to inform users about tracking and provide them with the option to manage their preferences. 
+This project uses Google Analytics, to gather insights on how users interact with the site — such as which pages are visited and how long users stay. This information helps guide improvements to the user experience.
 
-Additionally, Google Tag Manager is used to manage tracking scripts efficiently, ensuring minimal impact on page performance. This setup allows me to gather insights while respecting user privacy and complying with data protection regulations.
+### Which is pused right now until further notice
 
+Currently, tracking is activated by default when the site loads. No cookie banner or consent mechanism is yet in place. However:
+1. No personally identifiable information is collected.
+2. IP anonymization is enabled in GA.
+3. The data is used solely for internal, non-commercial insights during development.
+
+Since this is a non-commercial, educational project, and does not collect any user-submitted data, I’ve chosen not to implement a consent banner at this stage.
+
+What i could do next is:
+
+This project is launched on Netlify for show casing only, and adding consent mechanism would be necessary to fully align with privacy regulations like GDPR.
+
+If you have any concerns please contact me on my email how u can find in my GitHub bio.
 # Security Threats and Mitigation Documentation
 
 Passwords are securely hashed using `bcrypt` before being stored in the database, ensuring user credentials are protected even in the event of a data breach.
