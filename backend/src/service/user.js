@@ -1,5 +1,7 @@
 import User from '../models/useModel.js';
 
+// add trycatch in each block for error handling
+
 // Create a new user
 export const createUser = async (userData) => {
   const user = new User(userData);
