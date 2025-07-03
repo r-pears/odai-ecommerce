@@ -24,7 +24,8 @@ app.use(express.json());
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes); 
 
-app.get('/', (req, res) => {
+// prefix with an underscore when the request isnt used
+app.get('/', (_req, res) => {
     res.send('API is running...');
 });
 
