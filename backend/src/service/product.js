@@ -1,6 +1,19 @@
 import Product from '../models/productModel.js';
 import Counter from '../models/counterModel.js';
 
+// its a little hard to read, i would recommend using helper functions to make it more readable, for example one for handle errors and one for validating data.
+// const handleError = (res, error, message = "Server error") => {
+//   console.error(message, error.message);
+//   res.status(500).json({ message, error: error.message });
+// };
+
+// Helper function for validating product data
+// const validateProductData = (data) => {
+//   const { name, price, description, stock, image, category } = data;
+//   return name && price && description && stock && image && category;
+// };
+
+
 export const createProduct = async (req, res) => {
   try {
     console.log('Request Body:', req.body); // Log the incoming data
